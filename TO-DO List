@@ -1,5 +1,5 @@
 class TASK:
-  def __intit__(self, title, status= "Not Started"):
+  def __init__(self, title, status= "Not Started"):
     self.title= Title
     self.status= Status
   def __str__(self):
@@ -8,7 +8,7 @@ class ToDoList:
   def __init__(self):
     self.tasks = []
   def add_task(self, title):
-    task = task(Title)
+    task = TASK(title)
     self.tasks.append(task)
   def remove_task(self, title):
     self.tasks = [task for task in self.tasks if task.title != title]
