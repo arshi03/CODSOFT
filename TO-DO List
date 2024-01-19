@@ -14,7 +14,7 @@ class ToDoList:
     self.tasks = [task for task in self.tasks if task.title != title]
   def update_task(self, title, status):
     for task in self.tasks:
-    if task.title = Title:
+     if task.title == Title:
       task.status = Status
       break
   def view_tasks(self):
@@ -28,7 +28,7 @@ def menu():
   print("5. Exit")
 def run():
   todo_list = ToDoList()
-    while True:
+  while True:
         menu()
         choice = input("Please make your choice: ")
         if choice == "1":
