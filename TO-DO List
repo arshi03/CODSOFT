@@ -1,0 +1,51 @@
+class TASK:
+  def __intit__(self, title, status= "Not Started"):
+    self.title= Title
+    self.status= Status
+  def __str__(self):
+    return f"{self.title} - {self.status}"
+class ToDoList:
+  def __init__(self):
+    self.tasks = []
+  def add_task(self, title):
+    task = task(Title)
+    self.tasks.append(task)
+  def remove_task(self, title):
+    self.tasks = [task for task in self.tasks if task.title != title]
+  def update_task(self, title, status):
+    for task in self.tasks:
+    if task.title = Title:
+      task.status = Status
+      break
+  def view_tasks(self):
+    for task in self.tasks:
+      print(task)
+def menu():
+  print("1. Add Task")
+  print("2. Remove Task")
+  print("3. Update Task")
+  print("4. View Tasks")
+  print("5. Exit")
+def run():
+  todo_list = ToDoList()
+    while True:
+        menu()
+        choice = input("Please make your choice: ")
+        if choice == "1":
+          title = input("Enter your task title: ")
+          todo_list.add_task(title)
+        elif choice == "2":
+          title = input("Enter your task title: ")
+          todo_list.remove_task(title)
+        elif choice == "3":
+          title = input("Enter your task title: ")
+          status = input("Enter the new status of the task: ")
+          todo_list.update_task(title, status)
+        elif choice == "4":
+          todo_list.view_tasks()
+        elif choice == "5":
+          break
+        else:
+          print("Invalid choice, please try again and select a valid option among the given options")
+if __name__ == "__main__":
+    run() 
