@@ -1,0 +1,40 @@
+def add(A,B):
+  return A+B
+def subtract(A,B):
+  return A-B
+def multiply(A,B):
+  return A*B
+def divide(A,B):
+  return A/B
+def menu():
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Exit")
+def run():
+while True():
+  menu()
+    choice = input("Please make your choice: ")
+    if choice == "1":
+      num1= float(input("Enter the first number of your choice: "))
+      num2= float(input("Enter the second number of your choice: "))
+      print("After adding the two numbers, we get: ", add(num1, num2))
+    elif choice == "2":
+      num1= float(input("Enter the first number of your choice: "))
+      num2= float(input("Enter the second number of your choice: "))
+      print("After subtracting the two numbers, we get: ", subtract(num1, num2))
+    elif choice == "3":
+      num1= float(input("Enter the first number of your choice: "))
+      num2= float(input("Enter the second number of your choice: "))
+      print("After multiplying the two numbers, we get: ", multiply(num1, num2))
+    elif choice == "4":
+      num1= float(input("Enter the first number of your choice: "))
+      num2= float(input("Enter the second number of your choice: "))
+      print("After dividing the two numbers, we get: ", divide(num1, num2))
+    elif choice == "5":
+      break
+    else:
+      print("Invalid choice! Please try again and select from the options given above")
+if __name__ = "__main__":
+    run()
