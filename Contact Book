@@ -1,0 +1,77 @@
+class Contact:
+  def __init__(self, name, phone, email, address):
+    self.name = name
+    self.phone = phone
+    self.email = email
+    self.address = address
+class Store:
+  def __init__(self):
+    self.contacts = []
+  def add_contact(self, name, phone, email, address):
+    new_contact = Contact( name, phone, email, address )
+    self.contacts.append(new_contact)
+  def view_contact_list(self):
+    for contact in self.contacts:
+      print(f"Name: {contact.name}, Phone: {contact.phone}, Email: {contact.email}, Address: {contact.address}")
+  def search_contact(self, name= None, phone=None):
+    if name:
+      for contact in self.contacts:
+        if contact.name.lower() = name.lower():
+          return contact
+    elif phone:
+      for contact in self.contacts:
+        if contact.phone == phone:
+          return contact
+    else:
+      print("Please enter either a name or a phone number to search.")
+  def update_contact(self, name, phone= None, email= None, address= None):
+    contact = self.search_contact(name=name)
+    if contact:
+      if phone:
+        contact.phone = phone
+      if email:
+        contact.email = email
+      if address:
+        contact.address = address
+    else:
+      print("Contact NOT found.")
+  def delete_contact(self, name):
+    global contacts
+    contacts = [contacts for contact in contacts if contact.name.lower() != name.lower()]
+store = Store()
+while True:
+    print("\n1. Add Contact")
+    print("2. View Contact List")
+    print("3. Search Contact")
+    print("4. Update Contact")
+    print("5. Delete Contact")
+    print("6. Exit")
+    choice = input("Please make a choice: ")
+    if choice == "1":
+        name = input("Enter contact name: ")
+        phone = input("Enter contact phone number: ")
+        email = input("Enter contact email: ")
+        address = input("Enter contact address: ")
+        store.add_contact(name, phone, email, address)
+    elif choice == "2":
+      store.view_contact_list()
+    elif choice == "3":
+      name = input("Enter contact name: ")
+      contact = store.search_contact(name=name)
+      if contact:
+        print(f"Name: {contact.name}, Phone: {contact.phone}, Email: {contact.email}, Address: {contact.address}")
+      else:
+        print("Sorry! Contact NOT found.")
+    elif choice == "4":
+      name = input("Enter contact name: ")
+      phone = input("Enter new phone number(press enter to skip): ")
+      email = input("Enter new email(press enter to skip): ")
+      address = input("Enter new address(press enter to skip): ")
+      store.update_contact(name, phone, email, address)
+    elif choice == "5":
+      name = input("Enter contact name: ")
+      store.delete_contact(name)
+    elif choice == "6":
+      break
+    else:
+      print("Invalid input! Please try again.")
