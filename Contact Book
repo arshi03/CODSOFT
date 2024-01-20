@@ -69,19 +69,19 @@ def view_contact(self):
   messagebox.showinfo("Contact List", self.store.view_contact_list())
 def search_contact(self):
   name = input("Enter contact name: ")
-      contact = self.store.search_contact(name)
-      if contact:
+  contact = self.store.search_contact(name)
+  if contact:
         messagebox.showinfo("Contact details: ", str(contact))
-      else:
+  else:
         messagebox.showerror("ERROR, SORRY!", "Contact NOT found")
 def update_contact(self):
   name = input("Enter contact name: ")
-      phone = input("Enter new phone number(press enter to skip): ")
-      email = input("Enter new email(press enter to skip): ")
-      address = input("Enter new address(press enter to skip): ")
-      if self.store.update_contact(name, phone, email, address):
+  phone = input("Enter new phone number(press enter to skip): ")
+  email = input("Enter new email(press enter to skip): ")
+  address = input("Enter new address(press enter to skip): ")
+  if self.store.update_contact(name, phone, email, address):
         messagebox.showinfo("SUCCESS!", "Contact added successfully")
-      else:
+  else:
         messagebox.showerror("ERROR, SORRY!", "Contact NOT found")
 def delete_contact(self):
   name = input("Enter contact name: ")
