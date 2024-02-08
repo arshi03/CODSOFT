@@ -1,7 +1,7 @@
 class TASK:
   def __init__(self, title, status= "Not Started"):
-    self.title= Title
-    self.status= Status
+    self.title= title
+    self.status= status
   def __str__(self):
     return f"{self.title} - {self.status}"
 class ToDoList:
@@ -14,8 +14,8 @@ class ToDoList:
     self.tasks = [task for task in self.tasks if task.title != title]
   def update_task(self, title, status):
     for task in self.tasks:
-     if task.title == Title:
-      task.status = Status
+     if task.title == title:
+      task.status = status
       break
   def view_tasks(self):
     for task in self.tasks:
